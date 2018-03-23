@@ -22,10 +22,10 @@ public class Servlet extends HttpServlet {
 
         if (loginService.checkPassword(loginname, password)) {
             req.setAttribute("loginname", loginname);
-
+            resp.sendRedirect("listbooks.do");
 //            loginService.saveLogin(new User(loginname, password));
 
-            req.getRequestDispatcher("WEB-INF/views/welcome.jsp").forward(req, resp);
+//            req.getRequestDispatcher("WEB-INF/views/welcome.jsp").forward(req, resp);
         } else {
             req.setAttribute("error", "Servlet False");
             req.getRequestDispatcher("WEB-INF/views/login.jsp").forward(req, resp);

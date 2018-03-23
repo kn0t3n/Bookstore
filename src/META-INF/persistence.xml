@@ -15,5 +15,4 @@
             <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
         </properties>
     </persistence-unit>
-
 </persistence>

@@ -14,7 +14,7 @@
 
 <h2>${error}</h2>
 
-<form action="/einloggen.do" method="post">
+<form action="einloggen" method="post">
     Loginname: <input type="text" name="loginname">
     Passwort: <input type="password" name="password">
     <input type="submit" value="Einloggen"/>

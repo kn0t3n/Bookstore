@@ -4,22 +4,23 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table (name = "Buch")
 public class Book {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String ISBN, title, autor;
+    private String ISBN;
+    private String title;
+    private String author;
 
     public Book() {
     }
 
-    public Book(String ISBN, String title, String autor) {
+    public Book(String ISBN, String title, String author) {
         this.ISBN = ISBN;
         this.title = title;
-        this.autor = autor;
+        this.author = author;
     }
 
     public int getId() {
@@ -46,12 +47,12 @@ public class Book {
         this.title = title;
     }
 
-    public String getAutor() {
-        return autor;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setAuthor(String autor) {
+        this.author = autor;
     }
 
     @Override
@@ -62,13 +63,13 @@ public class Book {
         return id == book.id &&
                 Objects.equals(ISBN, book.ISBN) &&
                 Objects.equals(title, book.title) &&
-                Objects.equals(autor, book.autor);
+                Objects.equals(author, book.author);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, ISBN, title, autor);
+        return Objects.hash(id, ISBN, title, author);
     }
 
     @Override
@@ -77,7 +78,7 @@ public class Book {
                 "id=" + id +
                 ", ISBN='" + ISBN + '\'' +
                 ", title='" + title + '\'' +
-                ", autor='" + autor + '\'' +
+                ", autor='" + author + '\'' +
                 '}';
     }
 }
